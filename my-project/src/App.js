@@ -1,13 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ComplaintForm from "./components/ComplaintForm";
+import LoginPage from "./components/LoginPage";
+import Header from "./components/Header";
+import NoPage from "./components/NoPage";
+// import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <p className='bg-yellow-400'>
-        Hello world
-      </p>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/fill_complain" element={<ComplaintForm />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
