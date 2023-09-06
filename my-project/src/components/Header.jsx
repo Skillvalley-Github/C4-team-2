@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.png";
 
 function Header() {
   return (
@@ -11,9 +12,9 @@ function Header() {
     <a className="block text-teal-600" href="/">
       <span className="sr-only">Home</span>
       
-      
+      <img src={logo} width={60}  height={60} className="App-logo" alt="logo" />
     </a>
-
+    {/* <img src={logo} className="App-logo" alt="logo" /> */}
     <div className="flex flex-1 items-center justify-end md:justify-between">
       <nav aria-label="Global" className="hidden md:block">
         <ul className="flex items-center gap-6 text-sm">
