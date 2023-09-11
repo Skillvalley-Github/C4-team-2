@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ComplaintForm = () => {
   const [formData, setFormData] = useState({
-    name: 'Aryan',
-    email: 'aryansh0004@gmail.com',
-    mobileNumber: 'xxxxxxxxx',
-    otp: 'xxxx',
-    dateOfBirth: 'DD/MM/YYYY',
-    complaint: 'AbCd..',
+    name: "Aryan",
+    email: "aryansh0004@gmail.com",
+    mobileNumber: "xxxxxxxxx",
+    otp: "xxxx",
+    dateOfBirth: "DD/MM/YYYY",
+    complaint: "AbCd..",
     file: null,
   });
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
-    if (type === 'file') {
+    if (type === "file") {
       setFormData({ ...formData, [name]: files[0] });
     } else {
       setFormData({ ...formData, [name]: value });
@@ -22,14 +22,20 @@ const ComplaintForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+    console.log("Form Data:", formData);
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="name"
+          >
             Name
           </label>
           <input
@@ -44,7 +50,10 @@ const ComplaintForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -59,7 +68,10 @@ const ComplaintForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="mobileNumber">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="mobileNumber"
+          >
             Mobile Number
           </label>
           <input
@@ -74,7 +86,10 @@ const ComplaintForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="otp">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="otp"
+          >
             OTP
           </label>
           <input
@@ -89,7 +104,10 @@ const ComplaintForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="dateOfBirth">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="dateOfBirth"
+          >
             Date of Birth
           </label>
           <input
@@ -103,7 +121,10 @@ const ComplaintForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="complaint">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="complaint"
+          >
             Complaint
           </label>
           <textarea
@@ -118,7 +139,10 @@ const ComplaintForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="file">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="file"
+          >
             File Attachment
           </label>
           <input
