@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ComplaintForm from "./components/ComplaintForm";
 import LoginPage from "./components/LoginPage";
 import Header from "./components/Header";
-import NoPage from "./components/NoPage";
+import NotFound from "./components/NotFound";
+import ProfilePage from "./components/ProfilePage";
 // import './App.css';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={<Header />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/fill_complain" element={<ComplaintForm />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
