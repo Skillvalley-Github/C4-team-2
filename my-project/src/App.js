@@ -5,6 +5,7 @@ import ComplaintForm from "./components/ComplaintForm";
 import LoginPage from "./components/LoginPage";
 import Header from "./components/Header";
 import NoPage from "./components/NoPage";
+import ProfilePage from "./components/ProfilePage";
 // import './App.css';
 
 function App() {
