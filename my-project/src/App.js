@@ -17,6 +17,9 @@ function App() {
           <Route path="/" element={<Header />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/fill_complain" element={<ComplaintForm />} />
+          <Route path="/profile_page" element={<ProfilePage />} />
+          
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
