@@ -1,176 +1,193 @@
-import React from "react";
-import logo from "../assets/logo.png";
+import React from 'react'
+// import {logo} from '../assets/logo.png'
+// import {logo} from '../assets/logo.png'
+import pub_ban from '../assets/public_banner.jpg'
+import { useState } from 'react'
+import { Dialog } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+// import { BrowserRouter as Router, Route, Link} from "react-router-dom"
+import LoginPage from './LoginPage'
+
+const navigation = [
+  { name: 'Product', href: '#' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
+  { name: 'Company', href: '#' },
+]
 
 function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
-    <div>
-      <div>
-        <header className="bg-white">
-          <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-            <a className="block text-teal-600" href="/">
-              <span className="sr-only">Home</span>
+    // <Router>
 
-              <img
-                src={logo}
-                width={60}
-                height={60}
-                className="App-logo"
-                alt="logo"
-              />
+    
+    <div className="relative isolate overflow-hidden bg-gray-900">
+      <img
+        src={pub_ban}
+        alt=""
+        className="absolute inset-0 -z-10 h-full w-full object-cover"
+      />
+      <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+        <svg
+          className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+          viewBox="0 0 1155 678"
+        >
+          <path
+            fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+            fillOpacity=".2"
+            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+          />
+          <defs>
+            <linearGradient
+              id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+              x1="1155.49"
+              x2="-78.208"
+              y1=".177"
+              y2="474.645"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#9089FC" />
+              <stop offset={1} stopColor="#FF80B5" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div className="px-6 lg:px-8">
+        <nav className="flex items-center justify-between pt-6" aria-label="Global">
+          <div className="flex lg:flex-1">
+            <a href="gj" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              {/* <img className="h-8" src={logo} alt="" /> */}
             </a>
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <div className="flex flex-1 items-center justify-end md:justify-between">
-              <nav aria-label="Global" className="hidden md:block">
-                <ul className="flex items-center gap-6 text-sm">
-                  <li>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="/login" className="text-sm font-semibold leading-6 text-white">
+              Log in <span aria-hidden="true">&rarr;</span> 
+            </a>
+            {/* <Link to="/login" component={LoginPage} className="text-sm font-semibold leading-6 text-white">
+            Log i <span aria-hidden="true">&rarr;</span>
+            </Link>  */}
+          </div>
+        </nav>
+        
+        <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+          <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-gray-900 px-6 py-6 lg:hidden">
+            <div className="flex items-center justify-between">
+              <a href="/dd" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="" />
+              </a>
+              <button
+                type="button"
+                className="-m-2.5 rounded-md p-2.5 text-gray-400"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/25">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
                     <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="/"
+                      key={item.name}
+                      href={item.href}
+                      className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10"
                     >
-                      About
+                      {item.name}
                     </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="/"
-                    >
-                      Careers
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="/"
-                    >
-                      History
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="/"
-                    >
-                      Services
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="/"
-                    >
-                      Projects
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="/"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="flex items-center gap-4">
-                <div className="sm:flex sm:gap-4">
+                  ))}
+                </div>
+                <div className="py-6">
                   <a
-                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                    href="/login"
+                    href="/hh"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-white hover:bg-gray-400/10"
                   >
-                    Login
-                  </a>
-
-                  <a
-                    className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                    href="/"
-                  >
-                    Register
+                    Log in
                   </a>
                 </div>
-
-                <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
-                  <span className="sr-only">Toggle menu</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </button>
               </div>
             </div>
+          </Dialog.Panel>
+        </Dialog>
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+              Announcing our next round of funding.{' '}
+              <a href="/ff" className="font-semibold text-white">
+                <span className="absolute inset-0" aria-hidden="true" />
+                Read more <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
-        </header>
-      </div>
-      <div class="flex justify-center  bg-blue-900 p-5 md:p-16 lg:p-28">
-        <div class="flex flex-col justify-center  max-w-7xl  text-white">
-          <h1 class="text-base font-medium tracking-wider ">
-            Welcome to my Client Template
-          </h1>
-          <span class="underline underline-offset-2 text-white -mt-3">
-            {" "}
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-          </span>
-          <div class="flex flex-col text-white mt-5">
-            <h1 class="text-4xl md:text-[50px] font-semibold">
-              Hello I'm John Watson
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Data to enrich your online business
             </h1>
-            <p class="text-xl mt-2 md:mt-4 tracking-wide">
-              Designer - Developer - Freelancer
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+              fugiat veniam occaecat fugiat aliqua.
             </p>
-          </div>
-          <p class="mt-4 text-sm md:w-[52%] tracking-wide leading-7">
-            Tailblocks provides best Tailwind CSS components. Visit our website
-            and feel free to give feedback. With the help of Tailblocks, a user
-            can build a website in a much lesser time.
-          </p>
-          <div class="space-x-3 mt-6 md:mt-4">
-            <a href="#">
-              {" "}
-              <i class="fa-brands fa-facebook-f bg-blue-600 hover:text-blue-500 hover:bg-white rounded-full px-3 py-[11px] w-9 h-9 text-center "></i>
-            </a>
-            <a href="#">
-              {" "}
-              <i class="fa-brands fa-twitter bg-blue-600 hover:text-red-500 hover:bg-white rounded-full px-[10px] py-[11px] w-9 h-9 text-center"></i>
-            </a>
-            <a href="#">
-              {" "}
-              <i class="fa-brands fa-linkedin bg-blue-600 hover:text-yellow-500 hover:bg-white rounded-full px-3 py-[11px] w-9 h-9 text-center"></i>
-            </a>
-            <a href="#">
-              {" "}
-              <i class="fa-brands fa-chrome bg-blue-600 hover:text-indigo-600 hover:bg-white rounded-full px-[10px] py-[11px] w-9 h-9 text-center"></i>
-            </a>
-          </div>
-          <div class="flex mt-10 space-x-5">
-            <button class="bg-white text-blue-600 px-6 py-2 hover:brightness-105 font-semibold">
-              Read More
-            </button>
-            <button class="bg-blue-900 text-white border-2 border-white px-6 py-2 hover:brightness-105 font-semibold">
-              Contact Me
-            </button>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="/dd"
+                className="rounded-md bg-indigo-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              >
+                Get started
+              </a>
+              <a href="/ee" className="text-base font-semibold leading-7 text-white">
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      {/* <script src="https://cdn.tailwindcss.com"></script> */}
-      {/* <script src="https://use.fontawesome.com/03f8a0ebd4.js"></script> */}
+      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+        <svg
+          className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+          viewBox="0 0 1155 678"
+        >
+          <path
+            fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
+            fillOpacity=".2"
+            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+          />
+          <defs>
+            <linearGradient
+              id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
+              x1="1155.49"
+              x2="-78.208"
+              y1=".177"
+              y2="474.645"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#9089FC" />
+              <stop offset={1} stopColor="#FF80B5" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
     </div>
-  );
+    // </Router>
+  )
 }
 
-export default Header;
+export default Header
