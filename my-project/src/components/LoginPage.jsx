@@ -1,10 +1,18 @@
 import React from "react";
-import llogo from "../assets/llogo.png";
+// import llogo from "../assets/llogo.png";
+import { GoogleLogin } from '@react-oauth/google';
 
 function LoginPage() {
+  const responseMessage = (response) => {
+    console.log(response);
+};
+const errorMessage = (error) => {
+    console.log(error);
+};
   return (
+   
     <div className="flex flex-col md:flex-row min-h-screen">
-      
+      <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
       <div className="md:flex-1 flex items-center justify-center">
         <div className="bg-white py-6 sm:py-8 lg:py-12 mx-auto max-w-screen-md px-4 md:px-8">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">
@@ -53,7 +61,7 @@ function LoginPage() {
                 
               </div>
 
-              <button class="flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-gray-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:text-base">
+              {/* <button class="flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-gray-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:text-base">
                 <svg
                   class="h-5 w-5 shrink-0"
                   width="24"
@@ -73,14 +81,15 @@ function LoginPage() {
                   <path
                     d="M5.52488 14.29C5.27488 13.57 5.14488 12.8 5.14488 12C5.14488 11.2 5.28488 10.43 5.52488 9.71V6.62H1.54488C0.724882 8.24 0.254883 10.06 0.254883 12C0.254883 13.94 0.724882 15.76 1.54488 17.38L5.52488 14.29Z"
                     fill="#FBBC05"
-                  />
-                  <path
+                  /> 
+                   <path
                     d="M12.2549 4.75C14.0249 4.75 15.6049 5.36 16.8549 6.55L20.2749 3.13C18.2049 1.19 15.4949 0 12.2549 0C7.56492 0 3.51492 2.7 1.54492 6.62L5.52492 9.71C6.47492 6.86 9.12492 4.75 12.2549 4.75Z"
                     fill="#EA4335"
                   />
                 </svg>
                 Continue with Google
-              </button>
+              </button> */}
+              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
             </div>
 
             <div class="flex items-center justify-center bg-gray-100 p-4">
@@ -98,16 +107,17 @@ function LoginPage() {
           </form>
         </div>
       </div>
-
+     
       <div className="md:flex-1 bg-cover relative">
-        <img
+        {/* <img
           alt="Welcome"
           src={llogo}
           className="absolute inset-0 h-full w-full object-cover"
-        />
+        /> */}
       </div>
+      
     </div>
   );
 }
 
-export default LoginPage;
+export default LoginPage

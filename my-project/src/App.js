@@ -6,12 +6,20 @@ import LoginPage from "./components/LoginPage";
 import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 // import chatList from "./components/chatList.jsx";
+import { GoogleLogin } from '@react-oauth/google';
 
 function App() {
-  
+  const responseMessage = (response) => {
+    console.log(response);
+};
+const errorMessage = (error) => {
+    console.log(error);
+};
   return (
     <Router>
       <div className="App">
+
+      {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
         <Routes>
           <Route path="/" element={<Header />} />
           <Route path="/login" element={<LoginPage />} />
