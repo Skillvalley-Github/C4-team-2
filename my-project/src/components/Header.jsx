@@ -1,26 +1,25 @@
-import React from 'react'
+import React from "react";
 // import {logo} from '../assets/logo.png'
 // import {logo} from '../assets/logo.png'
-import pub_ban from '../assets/public_banner.jpg'
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import pub_ban from "../assets/public_banner.jpg";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { BrowserRouter as Router, Route, Link} from "react-router-dom"
-import LoginPage from './LoginPage'
+import LoginPage from "./LoginPage";
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Marketplace", href: "#" },
+  { name: "Company", href: "#" },
+];
 
 function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     // <Router>
 
-    
     <div className="relative isolate overflow-hidden bg-gray-900">
       <img
         src={pub_ban}
@@ -53,7 +52,10 @@ function Header() {
         </svg>
       </div>
       <div className="px-6 lg:px-8">
-        <nav className="flex items-center justify-between pt-6" aria-label="Global">
+        <nav
+          className="flex items-center justify-between pt-6"
+          aria-label="Global"
+        >
           <div className="flex lg:flex-1">
             <a href="gj" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -72,27 +74,41 @@ function Header() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-white"
+              >
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="/login" className="text-sm font-semibold leading-6 text-white">
-              Log in <span aria-hidden="true">&rarr;</span> 
+            <a
+              href="/login"
+              className="text-sm font-semibold leading-6 text-white"
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
             </a>
             {/* <Link to="/login" component={LoginPage} className="text-sm font-semibold leading-6 text-white">
             Log i <span aria-hidden="true">&rarr;</span>
             </Link>  */}
           </div>
         </nav>
-        
+
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-gray-900 px-6 py-6 lg:hidden">
+          <Dialog.Panel
+            focus="true"
+            className="fixed inset-0 z-10 overflow-y-auto bg-gray-900 px-6 py-6 lg:hidden"
+          >
             <div className="flex items-center justify-between">
               <a href="/dd" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="" />
+                <img
+                  className="h-8"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt=""
+                />
               </a>
               <button
                 type="button"
@@ -131,7 +147,7 @@ function Header() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-              Announcing our next round of funding.{' '}
+              Announcing our next round of funding.{" "}
               <a href="/ff" className="font-semibold text-white">
                 <span className="absolute inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
@@ -143,8 +159,9 @@ function Header() {
               Data to enrich your online business
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+              fugiat aliqua.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -153,7 +170,10 @@ function Header() {
               >
                 Get started
               </a>
-              <a href="/ee" className="text-base font-semibold leading-7 text-white">
+              <a
+                href="/ee"
+                className="text-base font-semibold leading-7 text-white"
+              >
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -187,7 +207,7 @@ function Header() {
       </div>
     </div>
     // </Router>
-  )
+  );
 }
 
-export default Header
+export default Header;
