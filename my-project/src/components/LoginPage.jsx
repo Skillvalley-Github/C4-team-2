@@ -120,4 +120,4 @@ const errorMessage = (error) => {
   );
 }
 
-export default LoginPage
+export default LoginPage;

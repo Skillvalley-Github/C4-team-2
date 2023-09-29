@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 // import chatList from "./components/chatList.jsx";
 import { GoogleLogin } from '@react-oauth/google';
+import Cards from "./components/Cards";
 
 function App() {
   const responseMessage = (response) => {
@@ -22,6 +23,7 @@ const errorMessage = (error) => {
       {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
         <Routes>
           <Route path="/" element={<Header />} />
+          {/* <LoginPage /> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/fill_complain" element={<ComplaintForm />} />
           {/* <Route path="/chat" element={<chatList />} /> */}
@@ -30,6 +32,8 @@ const errorMessage = (error) => {
           
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Cards />
+        <LoginPage />
       </div>
     </Router>
   );

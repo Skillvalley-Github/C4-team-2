@@ -1,0 +1,6 @@
+body {
+    background-image: url('https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2018/03/20/31927-callcentre-uswants-foramerican-only-reuters.jpg?itok=bMQpeKdl&c=770d21b653104422e5d9bce0d4b254e6');
+    background-size: cover; /* You can adjust this as needed */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Keeps the background fixed while scrolling */
+  }
