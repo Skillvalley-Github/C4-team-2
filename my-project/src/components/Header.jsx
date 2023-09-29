@@ -7,6 +7,9 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { BrowserRouter as Router, Route, Link} from "react-router-dom"
 import LoginPage from "./LoginPage";
+function scrollPageUp() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -86,6 +89,7 @@ function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="/login"
+              element={LoginPage}
               className="text-sm font-semibold leading-6 text-white"
             >
               Log in <span aria-hidden="true">&rarr;</span>
@@ -135,6 +139,7 @@ function Header() {
                 <div className="py-6">
                   <a
                     href="/hh"
+                    // element={LoginPage}
                     className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-white hover:bg-gray-400/10"
                   >
                     Log in
@@ -163,6 +168,7 @@ function Header() {
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
               fugiat aliqua.
             </p>
+
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="/dd"
@@ -204,6 +210,19 @@ function Header() {
             </linearGradient>
           </defs>
         </svg>
+
+
+
+
+
+        <button
+            onClick={scrollPageUp}
+            className="fixed bottom-4 right-4 p-4 bg-white-500 text-white rounded-full shadow-lg"
+          />
+
+
+
+
       </div>
     </div>
     // </Router>
