@@ -1,7 +1,7 @@
 import React from "react";
 // import {logo} from '../assets/logo.png'
 // import {logo} from '../assets/logo.png'
-import pub_ban from "../assets/public_banner.jpg";
+import pub_ban from "../assets/public_banner.jpeg";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -26,8 +26,8 @@ function Header() {
     <div className="relative isolate overflow-hidden bg-gray-900">
       <img
         src={pub_ban}
-        alt=""
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
+        alt="..."
+        className="absolute inset-0 -z-10 h-full w-full object-cover blur-sm bg-blend-color"
       />
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <svg
@@ -160,7 +160,7 @@ function Header() {
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-green-00 sm:text-6xl text-cyan-500">
               Data to enrich your online business
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-300">

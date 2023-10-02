@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from './components/Dashboard'
 import ComplaintForm from "./components/ComplaintForm";
 import LoginPage from "./components/LoginPage";
 import Header from "./components/Header";
@@ -22,7 +23,8 @@ const errorMessage = (error) => {
 
       {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/f" element={<Header />} />
           {/* <LoginPage /> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/fill_complain" element={<ComplaintForm />} />

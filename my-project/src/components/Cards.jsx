@@ -1,5 +1,4 @@
 import React from "react";
-// import './styles/Cards.css'
 
 function Cards() {
   return (
@@ -7,7 +6,7 @@ function Cards() {
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4 pt-6">
         <a href="#">
           <img
-            className="rounded-t-lg hover:sepia"
+            className="rounded-t-lg hover:saturate-150"
             src="https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2018/03/20/31927-callcentre-uswants-foramerican-only-reuters.jpg?itok=bMQpeKdl&c=770d21b653104422e5d9bce0d4b254e6"
             alt=""
           />
@@ -49,7 +48,7 @@ function Cards() {
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4 pt-6">
         <a href="#">
           <img
-            className="rounded-t-lg hover:sepia"
+            className="rounded-t-lg hover:saturate-150"
             src="https://images.pexels.com/photos/3912956/pexels-photo-3912956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
           />
@@ -87,10 +86,10 @@ function Cards() {
         </div>
       </div>
 
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4">
+      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4 ">
         <a href="#">
           <img
-            className="rounded-t-lg object-cover"
+            className="rounded-t-lg object-cover hover:saturate-150"
             src="https://cdn-5c522d64f911c81b2c8e83ae.closte.com/wp-content/uploads/2019/07/feedback-1-1080x675.jpg"
             alt=""
           />
