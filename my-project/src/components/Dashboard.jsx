@@ -28,6 +28,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import logo from "../assets/llogo.png";
+import Header from './Header';
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -147,11 +148,16 @@ export default function Example() {
           </Dialog>
         </Transition.Root>
 
+                                    <Header />
         {/* Static sidebar for desktop */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
+
+                                
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
+          
             <div className="flex h-16 flex-shrink-0 items-center bg-gray-900 px-4">
+            {/* <Header /> */}
               <img
                 className="h-8 w-auto"
                 src={logo}
@@ -159,6 +165,7 @@ export default function Example() {
               />
             </div>
             <div className="flex flex-1 flex-col overflow-y-auto">
+            
               <nav className="flex-1 space-y-1 px-2 py-4">
                 {navigation.map((item) => (
                   <a
@@ -183,6 +190,10 @@ export default function Example() {
             </div>
           </div>
         </div>
+
+
+
+
         <div className="flex flex-col md:pl-64">
           <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
             <button

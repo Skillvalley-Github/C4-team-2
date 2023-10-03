@@ -12,10 +12,10 @@ function scrollPageUp() {
 }
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Home", href: "#" },
+  { name: "Register Grievance", href: "#" },
+  { name: "Track status", href: "#" },
+  { name: "Give Feedback", href: "#" },
 ];
 
 function Header() {
@@ -25,9 +25,9 @@ function Header() {
 
     <div className="relative isolate overflow-hidden bg-gray-900">
       <img
-        src={pub_ban}
+        // src={pub_ban}
         alt="..."
-        className="absolute inset-0 -z-10 h-full w-full object-cover blur-sm bg-blend-color"
+        className="absolute inset-0 -z-10 h-full w-full object-cover blur-sm "
       />
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <svg
@@ -110,7 +110,7 @@ function Header() {
                 <span className="sr-only">Your Company</span>
                 <img
                   className="h-8"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  // src={llogo}
                   alt=""
                 />
               </a>
@@ -152,29 +152,26 @@ function Header() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-              Announcing our next round of funding.{" "}
+              Register your complaints with ease{" "}
               <a href="/ff" className="font-semibold text-white">
                 <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
+              <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-green-00 sm:text-6xl text-cyan-500">
-              Data to enrich your online business
-            </h1>
+              Fill your Complaint Online   </h1>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
+              A platform to resolve your public issues or locality with BDOs/MLAs and MPs
             </p>
 
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="/dd"
-                className="rounded-md bg-indigo-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                className="rounded-md bg-cyan-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-800"
               >
-                Get started
+                Register a complaint
               </a>
               <a
                 href="/ee"
